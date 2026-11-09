@@ -6,18 +6,6 @@ Access modifiers are an important part of Object-Oriented Programming (OOP) in T
 
 ### Access Modifiers
 
-Access modifiers control where a class property or method can be accessed.
-
-TypeScript has three main access modifiers:
-
-- public
-
-- private
-
-- protected
-
-They control the visibility of class members.
-
 #### Public
 
 A public property or method can be accessed from inside the class, outside the class, and from child classes.
