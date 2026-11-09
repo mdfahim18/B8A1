@@ -1,14 +1,10 @@
-// 1
-
 const multiplyValue = (value: number, multiplier = 2): number => {
   return value * multiplier;
 };
 
-// console.log(multiplyValue(10));
-// console.log(multiplyValue(10, 5));
-// console.log(multiplyValue(7, 0));
-
-// 2
+multiplyValue(10);
+multiplyValue(10, 5);
+multiplyValue(7, 0);
 
 const processInput = (value: string | number | boolean): string | number => {
   if (typeof value === "string") {
@@ -20,13 +16,10 @@ const processInput = (value: string | number | boolean): string | number => {
   }
 };
 
-// console.log(processInput(" TypeScript "));
-// console.log(processInput(""));
-// console.log(processInput(7));
-// console.log(processInput(true));
-// console.log(processInput(false));
-
-// 3
+processInput(" TypeScript ");
+processInput(7);
+processInput(true);
+processInput(false);
 
 const formatCoordinate = (
   coordinate: readonly [number, number, string]
@@ -35,20 +28,15 @@ const formatCoordinate = (
   return `Location: ${locationName} (${latitude}, ${longitude})`;
 };
 
-// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-// console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
-
-// 4
+formatCoordinate([23.81, 90.41, "Dhaka"]);
+formatCoordinate([22.35, 91.78, "Chittagong"]);
 
 const concatenateArrays = <T>(...arrays: T[][]): T[] => {
   return arrays.flat();
 };
 
-// console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-// console.log(concatenateArrays([1, 2], [3, 4], [5]));
-// console.log(concatenateArrays());
-
-// 5
+concatenateArrays(["a", "b"], ["c", "d"]);
+concatenateArrays([1, 2], [3, 4], [5]);
 
 interface Course {
   title: string;
@@ -71,9 +59,8 @@ const getPopularCourses = (
   );
 };
 
-// console.log(getPopularCourses(courses, 80));
+getPopularCourses(courses, 80);
 
-// 6
 const users = [
   { id: 1, name: "Rakib", role: "Admin" },
   { id: 2, name: "Sadia", role: "Editor" },
@@ -84,10 +71,9 @@ const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((item) => item[key]);
 };
 
-// console.log(pluckValues(users, "name"));
-// console.log(pluckValues(users, "id"));
+pluckValues(users, "name");
+pluckValues(users, "id");
 
-// 7
 class Employee {
   constructor(
     protected name: string,
@@ -112,10 +98,8 @@ class Manager extends Employee {
   }
 }
 const manager = new Manager("Alice", 50000, "Engineering");
-// console.log(manager.getDetails());
-// console.log(manager.getRoleInfo());
-
-// 8
+manager.getDetails();
+manager.getRoleInfo();
 
 const validateAgeAsync = async (age: number): Promise<string> => {
   return new Promise((resolve, reject) => {
