@@ -1,10 +1,10 @@
-# Problem Solving with TypeScript & OOP
+# Problem Solving with TypeScript and OOP
 
-This repository contains my solutions to different TypeScript problems and two blog posts written as part of my assignment. I have practiced TypeScript concepts and Object-Oriented Programming (OOP) through these tasks.
+This repository contains my solutions to TypeScript problems and two blog posts based on what I have learned about TypeScript and Object-Oriented Programming.
 
 ## Main Solution
 
-- [solutions.ts](./solutions.ts) – Contains the solutions to all assignment problems.
+- [solutions.ts](./solutions.ts)
 
 ## Blog Posts
 

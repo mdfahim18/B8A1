@@ -2,13 +2,13 @@
 
 ## Introduction
 
-TypeScript provides two useful features, type aliases and interface, that allow us to create custom types and define the structure of data. Both can describe object structures, but they have some differences in their features and usage.
+TypeScript provides two useful features, type aliases and interfaces, to define custom types and describe the structure of data. Both can define object structures, but they have some differences.
 
 ## What Is an Interface?
 
-An interface is a TypeScript feature that allows us to define the structure or shape of an object. It specifies which properties and methods an object should have and what types those properties and methods should follow.
+An interface defines the structure or shape of an object. It specifies which properties and methods an object should have and their types.
 
-Example
+Example:
 
 ```ts
 interface IUser {
@@ -20,13 +20,13 @@ interface IUser {
 }
 ```
 
-Here, IUser describes the structure of a user object. Any object following this interface must contain the defined properties with their specified types.
+Here, `IUser` describes the structure of a user object. An object using this interface must follow the defined structure.
 
-Interfaces are commonly used to define object structures. However, an interface cannot directly define primitive type aliases or represent a union type by itself. TypeScript also supports declaration merging with interfaces, which means multiple interface declarations with the same name can be combined.
+Interfaces are commonly used for object structures and class contracts. They also support declaration merging, which allows multiple interfaces with the same name to be combined. However, an interface cannot directly represent a primitive type or a union type.
 
 ## What Is a Type Alias?
 
-A type alias is created using the type keyword. It allows us to give a new name to an existing type or define our own custom types.
+A type alias uses the `type` keyword to give a name to an existing type or create a custom type.
 
 Primitive Type Alias:
 
@@ -53,14 +53,17 @@ type UserStatus = "active" | "inactive";
 const userStatus: UserStatus = "active";
 ```
 
-In this example, UserName does not create a new JavaScript variable or type at runtime. It simply gives a meaningful name to the existing string type.
+Here, `UserName` is an alias for the existing `string` type. Type aliases are removed during compilation and do not exist at runtime.
 
 ## When Should You Choose Type or Interface?
 
-Both type aliases and interface can be used to define object structures, so choosing between them depends on the situation.
+Both can define object structures. The choice depends on what you need.
 
-- Use Interface: When you mainly work with object structures, class contracts, or want to extend existing interfaces.
-- Use Type Alias: When you need to define primitive types, union types, intersection types, tuples, or combine different types into a more complex structure.
+Use Interface when working with object structures, class contracts, or extending existing interfaces.
+
+Use Type Alias when working with primitive types, union types, intersection types, tuples, or more complex type combinations.
+
+Example of Interface Extension:
 
 ```ts
 interface IUser {
@@ -71,6 +74,8 @@ interface IEmployee extends IUser {
   employeeId: number;
 }
 ```
+
+Example of Type Intersection:
 
 ```ts
 type User = {
@@ -84,4 +89,4 @@ type Employee = User & {
 
 ## Conclusion
 
-In conclusion, interfaces are useful for defining and extending object structures, while type aliases offer more flexibility for creating different kinds of types. Understanding their differences helps us choose the right approach and write cleaner TypeScript code.
+Interfaces are useful for defining and extending object structures. Type aliases provide more flexibility for creating different kinds of types. Understanding their differences helps us choose the right one for our needs.
