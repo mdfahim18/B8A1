@@ -123,7 +123,7 @@ const validateAgeAsync = async (age: number): Promise<string> => {
     if (age >= 18) {
       setTimeout(() => {
         resolve("Access Granted");
-      }, 100);
+      }, 1000);
     } else {
       reject(new Error("Access Denied: Must be 18 or older"));
     }
