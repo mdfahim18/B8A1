@@ -8,7 +8,7 @@ Access modifiers are an important part of Object-Oriented Programming (OOP) in T
 
 #### Public
 
-A public property or method can be accessed from inside the class, outside the class, and from child classes.
+A public property or method can be accessed inside the class, outside the class, and from child classes. It is the default access modifier, so writing public is optional.
 
 Example:
 
@@ -24,12 +24,6 @@ console.log(employee.name); // Fahim
 employee.name = "Rahim"; // Valid
 ```
 
-Here, we have explicitly used public.
-
-But what happens if we do not write public?
-
-In TypeScript, class members are public by default. So, both examples below mean the same thing:
-
 ```ts
 class Employee {
   name: string = "Fahim";
@@ -42,11 +36,9 @@ class Employee {
 }
 ```
 
-That is why we usually do not need to write public explicitly.
-
 #### Private
 
-A private property or method can only be accessed from within the same class.
+A private property or method can only be accessed within the same class.
 
 Example:
 
@@ -54,7 +46,7 @@ Example:
 class Employee {
   private baseSalary: number = 22000;
 
-  showSalary() {
+  showSalary(): void {
     console.log(this.baseSalary); // Valid
   }
 }
@@ -66,13 +58,11 @@ employee.showSalary();
 // employee.baseSalary; // Error
 ```
 
-Here, this.baseSalary can be accessed inside the class, but accessing employee.baseSalary from outside the class causes an error.
-
-This is a TypeScript compile-time restriction.
+Here, this.baseSalary is accessible inside the class, but employee.baseSalary causes an error outside it. This is a TypeScript compile-time restriction.
 
 #### Protected
 
-A protected property or method can be accessed from within the same class and its child classes. However, it cannot be accessed directly from outside the class.
+A protected property or method can be accessed inside its class and child classes, but not directly from outside.
 
 Example:
 
@@ -94,7 +84,7 @@ manager.showSalary();
 // manager.baseSalary; // Error
 ```
 
-Here, Manager is a child class of Employee. Since it inherits from Employee, it can access the protected property.
+Here, Manager can access baseSalary because it extends Employee.
 
 ### Access Modifier Comparison
 
@@ -104,9 +94,9 @@ Here, Manager is a child class of Employee. Since it inherits from Employee, it 
 | `protected` | Yes        | Yes         | No            |
 | `private`   | Yes        | No          | No            |
 
-### Readonly Modifier
+## Readonly Modifier
 
-`readonly` is not a visibility modifier. It is used to prevent a property from being reassigned after initialization.
+`readonly` prevents a property from being reassigned after initialization. It is not a visibility modifier.
 
 Example:
 
@@ -122,7 +112,7 @@ console.log(employee.name); // Fahim
 // employee.name = "Rahim"; // Error
 ```
 
-Here, we can read the name property, but we cannot assign a new value to it after initialization.
+We can read the name property, but cannot assign a new value to it.
 
 ## Conclusion
 
