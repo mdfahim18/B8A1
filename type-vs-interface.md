@@ -20,7 +20,7 @@ interface IUser {
 }
 ```
 
-Here, IUser is an interface that describes the structure of a user object. Any object that follows this interface must have a name of type string, an age of type number, an isActive property of type boolean, an action function, and a badge array containing strings.
+Here, IUser describes the structure of a user object. Any object following this interface must contain the defined properties with their specified types.
 
 Interfaces are commonly used to define object structures. However, an interface cannot directly define primitive type aliases or represent a union type by itself. TypeScript also supports declaration merging with interfaces, which means multiple interface declarations with the same name can be combined.
 
@@ -33,7 +33,7 @@ Primitive Type Alias:
 ```ts
 type UserName = string;
 
-const name: UserName = "Fahim";
+const userName: UserName = "Fahim";
 ```
 
 Object Type:
@@ -50,7 +50,7 @@ Union Type:
 ```ts
 type UserStatus = "active" | "inactive";
 
-const status: UserStatus = "active";
+const userStatus: UserStatus = "active";
 ```
 
 In this example, UserName does not create a new JavaScript variable or type at runtime. It simply gives a meaningful name to the existing string type.
@@ -59,8 +59,28 @@ In this example, UserName does not create a new JavaScript variable or type at r
 
 Both type aliases and interface can be used to define object structures, so choosing between them depends on the situation.
 
-- Use Interface: When you mainly work with object structures, class contracts, or want to extend existing interfaces. Interfaces are also useful when declaration merging is needed.
+- Use Interface: When you mainly work with object structures, class contracts, or want to extend existing interfaces.
 - Use Type Alias: When you need to define primitive types, union types, intersection types, tuples, or combine different types into a more complex structure.
+
+```ts
+interface IUser {
+  name: string;
+}
+
+interface IEmployee extends IUser {
+  employeeId: number;
+}
+```
+
+```ts
+type User = {
+  name: string;
+};
+
+type Employee = User & {
+  employeeId: number;
+};
+```
 
 ## Conclusion
 
