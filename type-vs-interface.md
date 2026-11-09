@@ -10,7 +10,7 @@ An interface is a TypeScript feature that allows us to define the structure or s
 
 Example
 
-```
+```ts
 interface IUser {
   name: string;
   age: number;
@@ -28,7 +28,7 @@ Interfaces are commonly used to define object structures. However, an interface 
 
 A type alias is created using the type keyword. It allows us to give a new name to an existing type or define our own custom types.
 
-```
+```ts
 type UserName = string;
 
 const name: UserName = "Fahim";
