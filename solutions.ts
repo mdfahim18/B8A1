@@ -66,10 +66,9 @@ const getPopularCourses = (
   courses: Course[],
   minStudents: number
 ): Course[] => {
-  const newArr = courses.filter(
+  return courses.filter(
     (course) => course.students >= minStudents && course.isPublished
   );
-  return newArr;
 };
 
 // console.log(getPopularCourses(courses, 80));
